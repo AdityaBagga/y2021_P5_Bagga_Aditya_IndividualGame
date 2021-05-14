@@ -46,6 +46,7 @@ public class Ball extends Actor{
 				dx = -dx;
 			}
 			((BallWorld)getWorld()).getScore().setScore(((BallWorld)getWorld()).getScore().getScoreCount()+100);
+			((BallWorld)getWorld()).setBricksRemoved(+1);
 			//((BallWorld)getWorld()).getScore().updateDisplay();
 			getWorld().remove(getOneIntersectingObject(Brick.class));
 		}

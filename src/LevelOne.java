@@ -7,9 +7,12 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
-public class Game extends BallWorld {
+public class LevelOne extends BallWorld {
 	
-	public Game() {
+	Application game;
+	
+	public LevelOne(Application game) {
+		this.game = game;
         this.setPrefSize(500, 500);
 
         Ball ball = new Ball();
@@ -22,17 +25,20 @@ public class Game extends BallWorld {
 
         double brickX = 40;
         double brickY = 150;
-        for (int i = 0; i < 10; i++) {
-            for (int j = 10; j > i; j--) {
+        for (int i = 0; i < 1; i++) {
+            for (int j = 0; j < 1; j++) {
                 Brick brick = new Brick();
                 brick.setX(brickX);
                 brick.setY(brickY);
                 brickX += 40;
+                setBricks(1);
                 this.add(brick);
+                
             }
             brickX = 40;
             brickY += 10;
         }
+        setBricksRemoved(1);
 
         this.setOnMouseMoved(new EventHandler<MouseEvent>() {
             @Override
@@ -72,5 +78,16 @@ public class Game extends BallWorld {
         this.requestFocus();
 
     }
+	
+	@Override
+	public void act(long now) {
+		if(getBricksRemoved() >= getBricks()){
+			System.out.println("Level Completed");
+			
+			((TopGame) game).setLevelTwo();
+			this.stop();
+		}
+		
+	}
 
 }

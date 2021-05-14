@@ -10,13 +10,13 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 
-public class MainMenu extends BorderPane{
+public class GameOver extends BorderPane{
 	
 	Button playGame;
 	Button instructions;
 	Application game;
 	
-	public MainMenu(Application game) {
+	public GameOver(Application game) {
 		this.game = game;
 		HBox title = new HBox();
 		title.setPadding(new Insets(20, 0, 0, 0));
@@ -50,7 +50,7 @@ public class MainMenu extends BorderPane{
 		@Override
 		public void handle(ActionEvent event) {
 			if(event.getSource() == playGame) {
-				((TopGame) game).setLevelOne();
+				//((TopGame) game).setLevelOne();
 			}
 		}
 	}
