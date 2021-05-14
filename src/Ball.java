@@ -16,7 +16,6 @@ public class Ball extends Actor{
 
 	@Override
 	public void act(long now) {
-		// TODO Auto-generated method stub
 		this.move(dx, dy);
 		if(getX() <= 0) {
 			dx = -dx;
@@ -30,16 +29,8 @@ public class Ball extends Actor{
 		}
 		if(getY() + getHeight() >= getWorld().getHeight()) {
 			dy = -dy;
-			//((BallWorld)getWorld()).getScore().setScore(((BallWorld)getWorld()).getScore().getScoreCount()-1000);
-		}
-
-		if(getHeight() == getY()){
 			((BallWorld)getWorld()).getScore().setScore(((BallWorld)getWorld()).getScore().getScoreCount()-1000);
 		}
-
-//		if(getOneIntersectingObject(Paddle.class)!=null){
-//			dy = -dy;
-//		}
 
 		if(getOneIntersectingObject(Brick.class)!=null){
 			double x = getOneIntersectingObject(Brick.class).getX();
@@ -55,6 +46,7 @@ public class Ball extends Actor{
 				dx = -dx;
 			}
 			((BallWorld)getWorld()).getScore().setScore(((BallWorld)getWorld()).getScore().getScoreCount()+100);
+			//((BallWorld)getWorld()).getScore().updateDisplay();
 			getWorld().remove(getOneIntersectingObject(Brick.class));
 		}
 

@@ -22,6 +22,7 @@ public class Score extends Text {
 
     public void setScore(int score) {
         this.score = score;
+        updateDisplay();
     }
 
 }
