@@ -10,18 +10,18 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 
-public class GameOver extends BorderPane{
+public class Instructions extends BorderPane{
 	
-	Button playGame;
-	Button instructions;
+	Button back;
 	Application game;
+	BorderPane pane;
 	
-	public GameOver(Application game) {
+	public Instructions(Application game, BorderPane pane) {
 		this.game = game;
 		HBox title = new HBox();
 		title.setPadding(new Insets(20, 0, 0, 0));
         
-        Text titleText = new Text("Game Over!");
+        Text titleText = new Text("Instructions");
         titleText.setFont(Font.font(null, 30));
         titleText.setFill(Color.BLACK);
         
@@ -34,13 +34,11 @@ public class GameOver extends BorderPane{
 		HBox buttons = new HBox();
 		buttons.setSpacing(50);
 		buttons.setAlignment(Pos.CENTER);
-		playGame = new Button("Play Again");
-		instructions = new Button("Instructions");
+		back = new Button("Back");
 		
 		OnAction onAction = new OnAction();
-		playGame.setOnAction(onAction);
-		instructions.setOnAction(onAction);
-		buttons.getChildren().addAll(playGame, instructions);
+		back.setOnAction(onAction);
+		buttons.getChildren().addAll(back);
 		
 		this.setCenter(buttons);
 	}
@@ -49,7 +47,7 @@ public class GameOver extends BorderPane{
 
 		@Override
 		public void handle(ActionEvent event) {
-			if(event.getSource() == playGame) {
+			if(event.getSource() == back) {
 				((TopGame) game).setLevelOne();
 			}
 		}

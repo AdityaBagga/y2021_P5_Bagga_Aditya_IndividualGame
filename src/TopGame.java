@@ -32,7 +32,6 @@ public class TopGame extends Application {
     	System.out.println("Level One Started");
     	
     	LevelOne level1 = new LevelOne(this);
-        //level1.setPrefSize(500, 500);
     	Scene scene = new Scene(level1, 500, 500);
         stage.setScene(scene);
         stage.show();
@@ -42,10 +41,28 @@ public class TopGame extends Application {
     	System.out.println("Level Two Started");
     	
     	LevelTwo level2 = new LevelTwo(this);
-        //level1.setPrefSize(500, 500);
     	Scene scene = new Scene(level2, 500, 500);
         stage.setScene(scene);
         stage.show();
     }
+    
+    public void setGameOver() {
+    	System.out.println("Game Over");
+    	
+    	GameOver gameOver = new GameOver(this);
+    	Scene scene = new Scene(gameOver, 500, 500);
+        stage.setScene(scene);
+        stage.show();
+    }
+    /*
+    public void setInstructions() {
+    	System.out.println("Instructions");
+    	
+    	Instructions instructions = new Instructions();
+    	Scene scene = new Scene(instructions, 500, 500);
+        stage.setScene(scene);
+        stage.show();
+    }
+    */
 
 }

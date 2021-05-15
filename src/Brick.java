@@ -1,8 +1,8 @@
 import javafx.scene.image.Image;
 
 public class Brick extends Actor{
-    public Brick(){
-        String path = getClass().getClassLoader().getResource("resources/brick.png").toString();
+    public Brick(String name){
+        String path = getClass().getClassLoader().getResource(name).toString();
         Image img = new Image(path);
         this.setImage(img);
     }
