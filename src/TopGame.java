@@ -23,6 +23,7 @@ public class TopGame extends Application {
         MainMenu rootNode = new MainMenu(this);
         
         Scene scene = new Scene(rootNode, 500, 500);
+        stage.setResizable(false);
         stage.setScene(scene);
         stage.show();
 
@@ -54,15 +55,24 @@ public class TopGame extends Application {
         stage.setScene(scene);
         stage.show();
     }
-    /*
+    
     public void setInstructions() {
     	System.out.println("Instructions");
     	
-    	Instructions instructions = new Instructions();
+    	Instructions instructions = new Instructions(this);
     	Scene scene = new Scene(instructions, 500, 500);
         stage.setScene(scene);
         stage.show();
     }
-    */
+    
+    public void setMainMenu() {
+    	System.out.println("Main Menu");
+    	
+    	MainMenu rootNode = new MainMenu(this);
+    	Scene scene = new Scene(rootNode, 500, 500);
+        stage.setScene(scene);
+        stage.show();
+    }
+    
 
 }

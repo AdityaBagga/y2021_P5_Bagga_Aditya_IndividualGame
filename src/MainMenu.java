@@ -52,6 +52,9 @@ public class MainMenu extends BorderPane{
 			if(event.getSource() == playGame) {
 				((TopGame) game).setLevelOne();
 			}
+			if(event.getSource() == instructions) {
+				((TopGame) game).setInstructions();
+			}
 		}
 	}
 

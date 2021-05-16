@@ -13,7 +13,7 @@ import javafx.scene.text.Text;
 public class GameOver extends BorderPane{
 	
 	Button playGame;
-	Button instructions;
+	Button mainMenu;
 	Application game;
 	
 	public GameOver(Application game) {
@@ -35,12 +35,12 @@ public class GameOver extends BorderPane{
 		buttons.setSpacing(50);
 		buttons.setAlignment(Pos.CENTER);
 		playGame = new Button("Play Again");
-		instructions = new Button("Instructions");
+		mainMenu = new Button("Main Menu");
 		
 		OnAction onAction = new OnAction();
 		playGame.setOnAction(onAction);
-		instructions.setOnAction(onAction);
-		buttons.getChildren().addAll(playGame, instructions);
+		mainMenu.setOnAction(onAction);
+		buttons.getChildren().addAll(playGame, mainMenu);
 		
 		this.setCenter(buttons);
 	}
@@ -51,6 +51,9 @@ public class GameOver extends BorderPane{
 		public void handle(ActionEvent event) {
 			if(event.getSource() == playGame) {
 				((TopGame) game).setLevelOne();
+			}
+			if(event.getSource() == mainMenu) {
+				((TopGame) game).setMainMenu();
 			}
 		}
 	}
