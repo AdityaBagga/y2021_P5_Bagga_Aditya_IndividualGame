@@ -4,6 +4,7 @@ import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
+import javafx.scene.effect.DropShadow;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
@@ -24,6 +25,8 @@ public class GameOver extends BorderPane{
         Text titleText = new Text("Game Over!");
         titleText.setFont(Font.font(null, 30));
         titleText.setFill(Color.BLACK);
+        DropShadow dropShadow = new DropShadow(5, 5, 5, Color.GRAY);
+        titleText.setEffect(dropShadow);
         
         title.getChildren().addAll(titleText);
         title.setAlignment(Pos.CENTER);

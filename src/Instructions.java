@@ -4,6 +4,7 @@ import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
+import javafx.scene.effect.DropShadow;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -26,6 +27,8 @@ public class Instructions extends BorderPane{
         Text titleText = new Text("Instructions");
         titleText.setFont(Font.font(null, 30));
         titleText.setFill(Color.BLACK);
+        DropShadow dropShadow = new DropShadow(5, 5, 5, Color.GRAY);
+        titleText.setEffect(dropShadow);
         
         Text description = new Text("Use your mouse or arrow keys to control a paddle at the bottom of the screen."
         		+ "Move the paddle right and left to prevent the ball from touching the bottom of the screen. "
