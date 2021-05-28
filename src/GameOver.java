@@ -38,7 +38,9 @@ public class GameOver extends BorderPane{
 		buttons.setSpacing(50);
 		buttons.setAlignment(Pos.CENTER);
 		playGame = new Button("Play Again");
+		playGame.setEffect(dropShadow);
 		mainMenu = new Button("Main Menu");
+		mainMenu.setEffect(dropShadow);
 		
 		OnAction onAction = new OnAction();
 		playGame.setOnAction(onAction);

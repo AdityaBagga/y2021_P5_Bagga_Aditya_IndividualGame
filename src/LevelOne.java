@@ -25,7 +25,7 @@ public class LevelOne extends BallWorld {
 
         double brickX = 40;
         double brickY = 150;
-        for (int i = 0; i < 1; i++) {
+        for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 1; j++) {
                 Brick brick = new Brick("resources/brick.png");
                 brick.setX(brickX);

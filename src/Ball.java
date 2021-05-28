@@ -1,4 +1,6 @@
+import javafx.animation.RotateTransition;
 import javafx.scene.image.Image;
+import javafx.util.Duration;
 
 public class Ball extends Actor{
 	
@@ -48,7 +50,17 @@ public class Ball extends Actor{
 			((BallWorld)getWorld()).getScore().setScore(((BallWorld)getWorld()).getScore().getScoreCount()+100);
 			((BallWorld)getWorld()).setBricksRemoved(+1);
 			//((BallWorld)getWorld()).getScore().updateDisplay();
+			
+			
+			RotateTransition rt = new RotateTransition();
+			//Duration duration = new Duration(1500, dirtyBits);
+			rt.setDuration(Duration.seconds(1));
+			rt.setFromAngle(90);
+			rt.setToAngle(210);
+			rt.setNode(getOneIntersectingObject(Brick.class));
+			
 			getWorld().remove(getOneIntersectingObject(Brick.class));
+
 		}
 
 //		if(getOneIntersectingObject(Paddle.class).isMoving()) {

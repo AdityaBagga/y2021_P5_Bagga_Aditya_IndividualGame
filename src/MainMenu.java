@@ -39,7 +39,9 @@ public class MainMenu extends BorderPane{
 		buttons.setSpacing(50);
 		buttons.setAlignment(Pos.CENTER);
 		playGame = new Button("Play Game");
+		playGame.setEffect(dropShadow);
 		instructions = new Button("Instructions");
+		instructions.setEffect(dropShadow);
 		
 		OnAction onAction = new OnAction();
 		playGame.setOnAction(onAction);

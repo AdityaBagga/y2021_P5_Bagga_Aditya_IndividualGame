@@ -58,6 +58,7 @@ public class Instructions extends BorderPane{
 		buttons.setSpacing(50);
 		buttons.setAlignment(Pos.CENTER);
 		back = new Button("Back");
+		back.setEffect(dropShadow);
 		
 		OnAction onAction = new OnAction();
 		back.setOnAction(onAction);
