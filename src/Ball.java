@@ -55,11 +55,11 @@ public class Ball extends Actor{
 			RotateTransition rt = new RotateTransition();
 			//Duration duration = new Duration(1500, dirtyBits);
 			rt.setDuration(Duration.seconds(1));
-			rt.setFromAngle(90);
-			rt.setToAngle(210);
+			rt.setToAngle(90);
 			rt.setNode(getOneIntersectingObject(Brick.class));
+			rt.play();
 			
-			getWorld().remove(getOneIntersectingObject(Brick.class));
+			//getWorld().remove(getOneIntersectingObject(Brick.class));
 
 		}
 
