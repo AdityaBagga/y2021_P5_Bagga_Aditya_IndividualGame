@@ -1,4 +1,6 @@
+import javafx.animation.ParallelTransition;
 import javafx.animation.RotateTransition;
+import javafx.animation.TranslateTransition;
 import javafx.scene.image.Image;
 import javafx.util.Duration;
 
@@ -57,9 +59,17 @@ public class Ball extends Actor{
 			rt.setDuration(Duration.seconds(1));
 			rt.setToAngle(90);
 			rt.setNode(getOneIntersectingObject(Brick.class));
-			rt.play();
+			//rt.play();
 			
-			//getWorld().remove(getOneIntersectingObject(Brick.class));
+			TranslateTransition tt = new TranslateTransition(Duration.millis(2000), getOneIntersectingObject(Brick.class));
+		    tt.setFromY(getOneIntersectingObject(Brick.class).getY());
+		    tt.setToY(((BallWorld)getWorld()).getHeight());
+		    tt.setAutoReverse(true);
+		    
+		    ParallelTransition pt = new ParallelTransition(getOneIntersectingObject(Brick.class),rt, tt);
+		    pt.play();
+		 
+		    //getWorld().remove(getOneIntersectingObject(Brick.class));
 
 		}
 
