@@ -38,13 +38,13 @@ public class LevelThree extends BallWorld {
                 Brick brick = new Brick("resources/brick.png");
                 brick.setX(brickX);
                 brick.setY(brickY);
-                brickX += 32;
+                brickX += 35;
                 setBricks(1);
                 this.add(brick);
                 
             }
             brickX = 45;
-            brickY += 15;
+            brickY += 12;
         }
         setBricksRemoved(1);
 
