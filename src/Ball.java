@@ -16,6 +16,14 @@ public class Ball extends Actor{
 		dx = 3.5;
 		dy = -2;
 	}
+	
+	public Ball(double dx, double dy) {
+		String path = getClass().getClassLoader().getResource("resources/ball.png").toString();
+		Image img = new Image(path);
+		this.setImage(img);
+		this.dx = dx;
+		this.dy = dy;
+	}
 
 
 	@Override

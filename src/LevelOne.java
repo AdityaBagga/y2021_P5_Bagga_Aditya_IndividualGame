@@ -18,6 +18,7 @@ public class LevelOne extends BallWorld {
         Ball ball = new Ball();
         ball.setX(250);
         ball.setY(250);
+       
 
         Paddle paddle = new Paddle();
         paddle.setX(250);

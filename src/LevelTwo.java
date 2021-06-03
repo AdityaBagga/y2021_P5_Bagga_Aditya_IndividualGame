@@ -18,6 +18,10 @@ public class LevelTwo extends BallWorld {
         Ball ball = new Ball();
         ball.setX(250);
         ball.setY(250);
+        
+        Ball ball2 = new Ball(3, 2);
+        ball2.setX(20);
+        ball2.setY(300);
 
         Paddle paddle = new Paddle();
         paddle.setX(250);
@@ -72,6 +76,7 @@ public class LevelTwo extends BallWorld {
 
 
         this.add(ball);
+        this.add(ball2);
         this.add(paddle);
         this.start();
 

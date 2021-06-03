@@ -18,6 +18,14 @@ public class LevelThree extends BallWorld {
         Ball ball = new Ball();
         ball.setX(250);
         ball.setY(250);
+        
+        Ball ball2 = new Ball(3, 2);
+        ball2.setX(250);
+        ball2.setY(250);
+        
+        Ball ball3 = new Ball(2, -3);
+        ball3.setX(250);
+        ball3.setY(250);
 
         Paddle paddle = new Paddle();
         paddle.setX(250);
@@ -72,6 +80,8 @@ public class LevelThree extends BallWorld {
 
 
         this.add(ball);
+        this.add(ball2);
+        this.add(ball3);
         this.add(paddle);
         this.start();
 
