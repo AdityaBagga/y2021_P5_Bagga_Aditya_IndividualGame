@@ -83,8 +83,8 @@ public class LevelOne extends BallWorld {
 	@Override
 	public void act(long now) {
 		if(getBricksRemoved() >= getBricks()){
-			System.out.println("Level Completed");
-			
+			System.out.println("Level 1 Completed");
+			((TopGame) game).setHighScore(getScore());
 			((TopGame) game).setLevelTwo();
 			this.stop();
 		}

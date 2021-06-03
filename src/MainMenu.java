@@ -17,9 +17,9 @@ public class MainMenu extends BorderPane{
 	Button playGame;
 	Button instructions;
 	Application game;
-	int highScore = 0;
 	
-	public MainMenu(Application game) {
+	
+	public MainMenu(Application game, int highScoreInt) {
 		this.game = game;
 		HBox title = new HBox();
 		title.setPadding(new Insets(20, 0, 0, 0));
@@ -35,7 +35,7 @@ public class MainMenu extends BorderPane{
         DropShadow dropShadow = new DropShadow(5, 5, 5, Color.GRAY);
         titleText.setEffect(dropShadow);
         
-        Text highScore = new Text("High score: ");
+        Text highScore = new Text("High score: " + highScoreInt);
         highScore.setFont(Font.font(null, 20));
         highScore.setFill(Color.BLACK);
         DropShadow dropShadow1 = new DropShadow(5, 5, 5, Color.GRAY);

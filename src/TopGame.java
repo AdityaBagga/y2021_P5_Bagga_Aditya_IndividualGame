@@ -10,6 +10,7 @@ import javafx.stage.Stage;
 public class TopGame extends Application {
 	
 	Stage stage;
+	int highScore = 0;
 
     public static void main(String[] args) {
         launch(args);
@@ -20,7 +21,7 @@ public class TopGame extends Application {
     	this.stage = stage;
         stage.setTitle("Aditya's Breakout");
 
-        MainMenu rootNode = new MainMenu(this);
+        MainMenu rootNode = new MainMenu(this, highScore);
         
         Scene scene = new Scene(rootNode, 500, 500);
         stage.setResizable(false);
@@ -77,10 +78,17 @@ public class TopGame extends Application {
     public void setMainMenu() {
     	System.out.println("Main Menu");
     	
-    	MainMenu rootNode = new MainMenu(this);
+    	MainMenu rootNode = new MainMenu(this, highScore);
     	Scene scene = new Scene(rootNode, 500, 500);
         stage.setScene(scene);
         stage.show();
+    }
+    
+    public void setHighScore(Score score) {
+    	if(score.getScoreCount() > highScore) {
+    		System.out.println("New High Score Achieved!!");
+    		highScore = score.getScoreCount();
+    	}
     }
     
 
