@@ -24,21 +24,38 @@ public class LevelOne extends BallWorld {
         paddle.setX(250);
         paddle.setY(this.getPrefHeight() - paddle.getHeight());
 
-        double brickX = 40;
+        double brickX = 45;
         double brickY = 150;
-        for (int i = 0; i < 1; i++) {
-            for (int j = 0; j < 1; j++) {
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 12; j++) {
                 Brick brick = new Brick("resources/brick.png");
                 brick.setX(brickX);
                 brick.setY(brickY);
-                brickX += 40;
+                brickX += 35;
                 setBricks(1);
                 this.add(brick);
                 
             }
-            brickX = 40;
-            brickY += 10;
+            brickX = 45;
+            brickY += 12;
         }
+        /*
+        double brickX = 45;
+        double brickY = 150;
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 12; j++) {
+                Brick brick = new Brick("resources/brick.png");
+                brick.setX(brickX);
+                brick.setY(brickY);
+                brickX += 32;
+                setBricks(1);
+                this.add(brick);
+                
+            }
+            brickX = 45;
+            brickY += 15;
+        }
+         */
         setBricksRemoved(1);
 
         this.setOnMouseMoved(new EventHandler<MouseEvent>() {

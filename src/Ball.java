@@ -81,10 +81,6 @@ public class Ball extends Actor{
 
 		}
 
-//		if(getOneIntersectingObject(Paddle.class).isMoving()) {
-//			System.out.println("HI");
-//		}
-
 		if(getOneIntersectingObject(Paddle.class)!=null){
 			double x = getOneIntersectingObject(Paddle.class).getX();
 			double y = getOneIntersectingObject(Paddle.class).getY();
@@ -94,7 +90,6 @@ public class Ball extends Actor{
 				dy = -dy;
 			}
 			if(paddle.getDx()!=0 || paddle.getPos() != paddle.getX()){
-				System.out.println("HI");
 				if((paddle.getDx() < 0 || paddle.getPos() > paddle.getX()) &&
 						getX() <= paddle.getX() + paddle.getWidth()/3){
 					dx = -Math.abs(dx);
