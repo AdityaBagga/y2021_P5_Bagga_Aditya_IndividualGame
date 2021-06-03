@@ -15,7 +15,6 @@ public abstract class World extends Pane{
 	private HashSet<KeyCode> keys;
 	
 	public World() {
-		//List<Actor> actor = this.getChildren();
 		timer = new AnimationTimer(){
 			@Override
 			public void handle(long now) {

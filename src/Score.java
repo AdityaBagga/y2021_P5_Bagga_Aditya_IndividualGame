@@ -11,7 +11,6 @@ public class Score extends Text {
         updateDisplay();
     }
 
-
     public void updateDisplay(){
         this.setText(String.valueOf(score));
     }

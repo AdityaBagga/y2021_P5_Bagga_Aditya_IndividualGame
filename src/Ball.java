@@ -59,11 +59,9 @@ public class Ball extends Actor{
 			}
 			((BallWorld)getWorld()).getScore().setScore(((BallWorld)getWorld()).getScore().getScoreCount()+100);
 			((BallWorld)getWorld()).setBricksRemoved(+1);
-			//((BallWorld)getWorld()).getScore().updateDisplay();
 			
 			
 			RotateTransition rt = new RotateTransition();
-			//Duration duration = new Duration(1500, dirtyBits);
 			rt.setDuration(Duration.seconds(1));
 			rt.setToAngle(90);
 			rt.setNode(getOneIntersectingObject(Brick.class));
@@ -76,8 +74,6 @@ public class Ball extends Actor{
 		    
 		    ParallelTransition pt = new ParallelTransition(getOneIntersectingObject(Brick.class),rt, tt);
 		    pt.play();
-		 
-		    //getWorld().remove(getOneIntersectingObject(Brick.class));
 
 		}
 
