@@ -83,9 +83,10 @@ public class LevelTwo extends BallWorld {
 	public void act(long now) {
 		if(getBricksRemoved() >= getBricks()){
 			System.out.println("Level Completed");
-			((TopGame) game).setGameOver();
+			((TopGame) game).setLevelThree();
 			this.stop();
 		}
+		
 		
 	}
 

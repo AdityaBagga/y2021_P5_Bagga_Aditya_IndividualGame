@@ -47,6 +47,15 @@ public class TopGame extends Application {
         stage.show();
     }
     
+    public void setLevelThree() {
+    	System.out.println("Level Three Started");
+    	
+    	LevelThree level3 = new LevelThree(this);
+    	Scene scene = new Scene(level3, 500, 500);
+        stage.setScene(scene);
+        stage.show();
+    }
+    
     public void setGameOver() {
     	System.out.println("Game Over");
     	

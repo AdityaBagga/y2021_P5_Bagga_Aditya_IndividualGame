@@ -7,11 +7,11 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
-public class LevelOne extends BallWorld {
+public class LevelThree extends BallWorld {
 	
 	Application game;
 	
-	public LevelOne(Application game) {
+	public LevelThree(Application game) {
 		this.game = game;
         this.setPrefSize(500, 500);
 
@@ -27,7 +27,7 @@ public class LevelOne extends BallWorld {
         double brickY = 150;
         for (int i = 0; i < 1; i++) {
             for (int j = 0; j < 1; j++) {
-                Brick brick = new Brick("resources/brick.png");
+                Brick brick = new Brick("resources/brick2.png");
                 brick.setX(brickX);
                 brick.setY(brickY);
                 brickX += 40;
@@ -83,8 +83,7 @@ public class LevelOne extends BallWorld {
 	public void act(long now) {
 		if(getBricksRemoved() >= getBricks()){
 			System.out.println("Level Completed");
-			
-			((TopGame) game).setLevelTwo();
+			((TopGame) game).setGameOver();
 			this.stop();
 		}
 		
